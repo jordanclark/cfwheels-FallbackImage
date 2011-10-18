@@ -16,6 +16,14 @@
 	<cfset var backup = "">
 	<cfif structKeyExists( arguments, "fallback" ) AND len( arguments.fallback ) AND listFindNoCase( application.fallbackImage.environments, application.wheels.environment )>
 		<cfset backup = arguments.fallback>
+		<cfscript>
+			local.source = listToArray(arguments.source,"/");
+			if (local.source[1] eq "images") {
+				arrayDeleteAt(local.source,1);	
+			}
+			local.source = arrayToList(local.source,"/");
+			StructUpdate(arguments, "source", local.source);
+		</cfscript>
 		<cfset structDelete( arguments, "fallback" )>
 		<cftry>
 			<cfreturn core.$imageTag( argumentCollection=arguments )>
