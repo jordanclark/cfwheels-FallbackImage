@@ -37,7 +37,7 @@
 
 <h2>Uninstallation:</h2>
 <p>
-To uninstall this plugin, simply delete the /plugins/FallbackImage-0.1.zip file.
+To uninstall this plugin, simply delete the /plugins/FallbackImage-*.zip file.
 </p>
 
 <h2>Credits</h2>
